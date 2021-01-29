@@ -1,7 +1,9 @@
 package adaitw.java;
 
+import java.util.List;
+
 public class AutoElectrico extends Vehiculo {
-    public AutoElectrico(Propietario propietario, Autorizado autorizado, String dominio, boolean profesional ){
-        super(propietario, autorizado, dominio, profesional);
+    public AutoElectrico(List<Propietario> propietarios, List<Autorizado> autorizados, String dominio, Boolean profesional) {
+        super(propietarios, autorizados, dominio, profesional);
     }
 }

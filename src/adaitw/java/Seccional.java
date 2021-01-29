@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Seccional {
-    private int numeroSeccional;
     private List<Moto> motos;
     private List<MotoElectrica> motosElectricas;
     private List<Auto> autos;
@@ -14,25 +13,14 @@ public class Seccional {
     private List<Utilitario> utilitarios;
 
     //Constructor
-    public Seccional(int numeroSeccional, List<Moto> motos, List<MotoElectrica> motosElectricas, List<Auto> autos, List<AutoElectrico> autosElectricos, List<Camion> camiones, List<Colectivo> colectivos, List<Utilitario> utilitarios) {
-
-        this.numeroSeccional = numeroSeccional;
-        this.motos = motos;
-        this.motosElectricas = motosElectricas;
-        this.autos = autos;
-        this.autosElectricos = autosElectricos;
-        this.camiones = camiones;
-        this.colectivos = colectivos;
-        this.utilitarios = utilitarios;
-
-    }
-
-    public int getNumeroSeccional() {
-        return numeroSeccional;
-    }
-
-    public void setNumeroSeccional(int numeroSeccional) {
-        this.numeroSeccional = numeroSeccional;
+    public Seccional() {
+        motos = new ArrayList<>();
+        motosElectricas = new ArrayList<>();
+        autos = new ArrayList<>();
+        autosElectricos= new ArrayList<>();
+        camiones = new ArrayList<>();
+        colectivos = new ArrayList<>();
+        utilitarios = new ArrayList<>();
     }
 
     public List<Moto> getMotos() {

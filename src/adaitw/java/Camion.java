@@ -1,7 +1,22 @@
 package adaitw.java;
 
+import java.util.List;
+
 public class Camion extends Vehiculo {
-    public Camion(Propietario propietario, Autorizado autorizado, String dominio, boolean profesional ){
-        super(propietario, autorizado, dominio, profesional);
+
+
+    public Camion(List<Propietario> propietarios, List<Autorizado> autorizados, String dominio, Boolean profesional) {
+        super(propietarios, autorizados, dominio, profesional);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Camion{" +
+                "propietarios=" + getPropietarios() +
+                ", dominio='" + dominio + '\'' +
+                ", profesional=" + profesional +
+                '}';
     }
 }
+
