@@ -14,6 +14,7 @@ public class Camion extends Vehiculo {
     public String toString() {
         return "Camion{" +
                 "propietarios=" + getPropietarios() +
+                "autorizados=" + getAutorizados() +
                 ", dominio='" + dominio + '\'' +
                 ", profesional=" + profesional +
                 '}';

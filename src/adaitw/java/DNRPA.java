@@ -7,6 +7,8 @@ import java.util.List;
 
 public class DNRPA {
 
+    private static Object Camion;
+
     public static void main(String[] args) {
 
         Seccional seccional = new Seccional();
@@ -40,17 +42,22 @@ public class DNRPA {
             System.out.println("Dominio nº: "+camion.getDominio()+" Propietario: "+camion.getPropietarios());
         });
 
+        System.out.println(camiones);
+
+
         //Falta unir al listado autos eléctricos con Casting
+        System.out.println("Cantidad total de camiones: "+camiones.size());
+
+
         System.out.println("Cantidad total de autos: "+autos.size());
+        for(int cont=0; cont < autos.size(); cont++){
+            System.out.println(autos.get(cont).fichaTecnica());
+        }
 
 
 
 
-
-
-
-
-        // Collection.sort() method is used here
+        // Collections.sort() method is used here
         /*Collections.sort(camiones, new Comparator<Camion>() {
             @Override
             public int compare(Camion o1, Camion o2) {
@@ -60,12 +67,11 @@ public class DNRPA {
         System.out.println("Listado alfabético propietarios camiones y nº dominio : "+camiones);
 
         //Forma Lambda 1
-
         Collections.sort(camiones, Comparator.comparing(o -> o.getPropietarios()));
         System.out.println("Listado propietarios camiones y nº dominio: "+camiones);
 
         //Forma Lambda 2
-        Collections.sort(camiones, (o1, o2) -> o1.propietario.compareTo(o2.propietario));
+        Collections.sort(camiones, (o1, o2) -> o1.propietarios.compareTo(o2.propietarios));
         System.out.println("Listado propietarios camiones y nº dominio: "+camiones);*/
 
     }

@@ -48,6 +48,10 @@ public class Vehiculo {
         this.autorizados = autorizados;
     }
 
+    public String fichaTecnica(){
+        return "Propietario: "+propietarios+ "Autorizado: "+autorizados;
+    }
+
     //print propietarios details en main()
     public String toString()
     {
@@ -55,4 +59,7 @@ public class Vehiculo {
                 " " + this.dominio;
     }
 
+
 }
+
+

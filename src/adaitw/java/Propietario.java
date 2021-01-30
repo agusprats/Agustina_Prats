@@ -36,5 +36,14 @@ public class Propietario {
     public void setDni(String dni) {
         this.dni = dni;
     }
+
+    @Override
+    public String toString() {
+        return "Propietario{" +
+                "nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", dni='" + dni + '\'' +
+                '}';
+    }
 }
 

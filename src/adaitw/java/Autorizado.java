@@ -13,6 +13,13 @@ public class Autorizado  {
         this.dni = dni;
     }
 
-
+    @Override
+    public String toString() {
+        return "Autorizado{" +
+                "nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", dni='" + dni + '\'' +
+                '}';
+    }
 }
 
