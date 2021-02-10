@@ -1,11 +1,11 @@
 package adaitw.java;
 
-import java.util.List;
 
 public class Propietario {
     protected String nombre;
     protected String direccion;
     protected String dni;
+
 
     public Propietario(String nombre, String direccion, String dni) {
         this.nombre = nombre;
@@ -13,11 +13,11 @@ public class Propietario {
         this.dni = dni;
     }
 
-    public String getNombre() {
+    public String getPropietario() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setPropietario(String nombre) {
         this.nombre = nombre;
     }
 
@@ -37,13 +37,20 @@ public class Propietario {
         this.dni = dni;
     }
 
-    @Override
-    public String toString() {
-        return "Propietario{" +
-                "nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", dni='" + dni + '\'' +
-                '}';
+    public String fichaTitular(){
+        return "Propietario: "+nombre+" dni: "+dni;
     }
+
+
+
+    //print propietarios details en main()
+    public String toString()
+    {
+        return "Propietario: "+this.nombre +
+                " - DNI:  " + this.dni; //+
+        // " - Domicilio:  " + this.direccion;
+
+    }
+
 }
 

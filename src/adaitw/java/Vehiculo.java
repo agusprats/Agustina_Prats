@@ -1,19 +1,84 @@
 package adaitw.java;
-
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vehiculo {
-    protected List<Propietario> propietarios;
-    protected List <Autorizado> autorizados;
+public abstract class Vehiculo {
+    protected Propietario propietario;
+    private List<Autorizados> autorizados;
     protected String dominio;
-    protected Boolean profesional;
+    protected Boolean categoriaProfesional;
+    private LocalDate fechaAlta;
+    protected LocalDate nuevaFecha;
 
-    public Vehiculo(List<Propietario> propietarios, List<Autorizado> autorizados, String dominio, Boolean profesional) {
-        propietarios = new ArrayList<>();
-        autorizados = new ArrayList<>();
+
+    public Vehiculo(Propietario propietario, Boolean categoriaProfesional, LocalDate fechaAlta) {
+        this.propietario = propietario;
+        this.autorizados = new ArrayList<>();
         this.dominio = dominio;
-        this.profesional = profesional;
+        this.categoriaProfesional = categoriaProfesional;
+        this.fechaAlta = LocalDate.now();
+        this.nuevaFecha = LocalDate.now();
+    }
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
+
+    //Autorizados:
+    public void agregarAutorizado(Autorizados autorizados) {
+        this.autorizados.add(autorizados);
+    }
+
+    public List<Autorizados> getAutorizados() {
+        return autorizados;
+    }
+
+    //Categorias
+    public String getCategoriaProfesional() {
+        if (categoriaProfesional) {
+            return " Profesional";
+        } else {
+            return  " Particular";
+        }
+    }
+
+    public void setCategoria (String categoriaProfesional){
+        if (categoriaProfesional.equalsIgnoreCase("si")) {
+            this.categoriaProfesional = true;
+        } else {
+            this.categoriaProfesional = false;
+        }
+    }
+
+    public LocalDate getFechaAlta() {
+        return fechaAlta;
+    }
+
+    // Nuevo Propietario
+    public void cambiaPropietario(Propietario propietario){
+        this.propietario = propietario;
+    }
+    public String nuevoPropietario(){
+        return "El nuevo Titular del vehiculo es: "+propietario;
+    }
+
+    // Fecha de Alta de Nuevo Propietario
+    public void asignarAltaNuevoTitular(){
+        this.nuevaFecha = LocalDate.now();
+    }
+    public String fechaCambioTitular(){
+        return "Cambio Titular Fecha: "+nuevaFecha;
+    }
+
+    //DOMINIO
+    public void agregarDominio(){
+        int dominio = (int)Math.random();
+        System.out.println("Dominio nª: " + dominio);
     }
 
     public String getDominio() {
@@ -24,42 +89,18 @@ public class Vehiculo {
         this.dominio = dominio;
     }
 
-    public Boolean getProfesional() {
-        return profesional;
-    }
-
-    public void setProfesional(Boolean profesional) {
-        this.profesional = profesional;
-    }
-
-    public List<Propietario> getPropietarios() {
-        return propietarios;
-    }
-
-    public void setPropietarios(List<Propietario> propietarios) {
-        this.propietarios = propietarios;
-    }
-
-    public List<Autorizado> getAutorizados() {
-        return autorizados;
-    }
-
-    public void setAutorizados(List<Autorizado> autorizados) {
-        this.autorizados = autorizados;
-    }
 
     public String fichaTecnica(){
-        return "Propietario: "+propietarios+ "Autorizado: "+autorizados;
+        return " "+propietario+" - Fecha Alta: "+fechaAlta;
     }
 
     //print propietarios details en main()
     public String toString()
     {
-        return this.getPropietarios() +
+        return this.propietario +
                 " " + this.dominio;
     }
-
-
 }
+
 
 

@@ -1,9 +1,15 @@
 package adaitw.java;
 
-import java.util.List;
+import java.time.LocalDate;
 
-public class Colectivo extends Vehiculo {
-    public Colectivo(List<Propietario> propietarios, List<Autorizado> autorizados, String dominio, Boolean profesional) {
-        super(propietarios, autorizados, dominio, profesional);
+public class Colectivo extends Vehiculo{
+    private int ejes;
+
+    public Colectivo( Propietario propietario, int ejes, Boolean categoriaProfesional, LocalDate fechaAlta) {
+        super(propietario, categoriaProfesional, fechaAlta);
+        this.ejes = ejes;
     }
+
+
+
 }

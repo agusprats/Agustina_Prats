@@ -1,9 +1,22 @@
 package adaitw.java;
 
-import java.util.List;
+import java.time.LocalDate;
 
-public class Moto extends Vehiculo {
-    public Moto(List<Propietario> propietarios, List<Autorizado> autorizados, String dominio, Boolean profesional) {
-        super(propietarios, autorizados, dominio, profesional);
+public class Moto extends Vehiculo{
+    public Moto( Propietario propietario, Boolean categoriaProfesional, LocalDate fechaAlta) {
+        super(propietario,categoriaProfesional, fechaAlta);
+    }
+
+    @Override
+    public String toString() {
+        return "Moto{" +
+                "Propietario: " + propietario + '\'' +
+                // ", Direccion: " + direccion + '\'' +
+                // ", DNI: " + dni + '\'' +
+                ", Autorizados:'" + getAutorizados() + '\'' +
+                // ", dominio='" + dominio + '\'' +
+                ", Categoria:" + getCategoriaProfesional() +
+                ", Fecha Alta:" + getFechaAlta() +
+                '}';
     }
 }

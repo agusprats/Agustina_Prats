@@ -1,42 +1,44 @@
 package adaitw.java;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Seccional {
-    private List<Moto> motos;
-    private List<MotoElectrica> motosElectricas;
-    private List<Auto> autos;
-    private List<AutoElectrico> autosElectricos;
-    private List<Camion> camiones;
-    private List<Colectivo> colectivos;
-    private List<Utilitario> utilitarios;
+public class Seccional{
+    private String codigoSeccional;
+    private String provincia;
+    protected List<Vehiculo> vehiculos;
+    private List<Auto> autos = new ArrayList<>();
+    private List<AutoElectrico> autoElectrico= new ArrayList<>();
+    private List<Moto> moto = new ArrayList<>();
+    private List<MotoElectrica> motoElectrica = new ArrayList<>();
+    private List<Camion> camion = new ArrayList<>();
+    private List<Colectivo> colectivo = new ArrayList<>();
+    private List<Utilitario> utilitario = new ArrayList<>();
 
-    //Constructor
-    public Seccional() {
-        motos = new ArrayList<>();
-        motosElectricas = new ArrayList<>();
-        autos = new ArrayList<>();
-        autosElectricos= new ArrayList<>();
-        camiones = new ArrayList<>();
-        colectivos = new ArrayList<>();
-        utilitarios = new ArrayList<>();
+    public Seccional(String codigoSeccional, String provincia ) {
+        this.codigoSeccional = codigoSeccional;
+        this.provincia = provincia;
+        this.autos = autos;
+        this.autoElectrico = autoElectrico;
+        this.moto = moto;
+        this.motoElectrica = motoElectrica;
+        this.camion = camion;
+        this.colectivo = colectivo;
+        this.utilitario = utilitario;
+        this.vehiculos= new ArrayList<>();
     }
 
-    public List<Moto> getMotos() {
-        return motos;
+    public void agregarVehiculo(Vehiculo vehiculo) {
+        this.vehiculos.add(vehiculo);
     }
 
-    public void setMotos(List<Moto> motos) {
-        this.motos = motos;
+    public String getCodigoSeccional() {
+        return codigoSeccional;
     }
 
-    public List<MotoElectrica> getMotosElectricas() {
-        return motosElectricas;
-    }
-
-    public void setMotosElectricas(List<MotoElectrica> motosElectricas) {
-        this.motosElectricas = motosElectricas;
+    public String getProvincia() {
+        return provincia;
     }
 
     public List<Auto> getAutos() {
@@ -47,36 +49,68 @@ public class Seccional {
         this.autos = autos;
     }
 
-    public List<AutoElectrico> getAutosElectricos() {
-        return autosElectricos;
+    public List<AutoElectrico> getAutoElectrico() {
+        return autoElectrico;
     }
 
-    public void setAutosElectricos(List<AutoElectrico> autosElectricos) {
-        this.autosElectricos = autosElectricos;
+    public void setAutoElectrico(List<AutoElectrico> autoElectrico) {
+        this.autoElectrico = autoElectrico;
     }
 
-    public List<Camion> getCamiones() {
-        return camiones;
+    public List<Moto> getMoto() {
+        return moto;
     }
 
-    public void setCamiones(List<Camion> camiones) {
-        this.camiones = camiones;
+    public void setMoto(List<Moto> moto) {
+        this.moto = moto;
     }
 
-    public List<Colectivo> getColectivos() {
-        return colectivos;
+    public List<MotoElectrica> getMotoElectrica() {
+        return motoElectrica;
     }
 
-    public void setColectivos(List<Colectivo> colectivos) {
-        this.colectivos = colectivos;
+    public void setMotoElectrica(List<MotoElectrica> motoElectrica) {
+        this.motoElectrica = motoElectrica;
     }
 
-    public List<Utilitario> getUtilitarios() {
-        return utilitarios;
+    public List<Camion> getCamion() {
+        return camion;
     }
 
-    public void setUtilitarios(List<Utilitario> utilitarios) {
-        this.utilitarios = utilitarios;
+    public void setCamion(List<Camion> camion) {
+        this.camion = camion;
+    }
+
+    public List<Colectivo> getColectivo() {
+        return colectivo;
+    }
+
+    public void setColectivo(List<Colectivo> colectivo) {
+        this.colectivo = colectivo;
+    }
+
+    public List<Utilitario> getUtilitario() {
+        return utilitario;
+    }
+
+    public void setUtilitario(List<Utilitario> utilitario) {
+        this.utilitario = utilitario;
+    }
+
+    @Override
+    public String toString() {
+        return "Seccional{" +
+                "codigoSeccional='" + codigoSeccional + '\'' +
+                ", provincia='" + provincia + '\'' +
+                ", vehiculos=" + vehiculos +
+                ", autos=" + autos +
+                ", autoElectrico=" + autoElectrico +
+                ", moto=" + moto +
+                ", motoElectrica=" + motoElectrica +
+                ", camion=" + camion +
+                ", colectivo=" + colectivo +
+                ", utilitario=" + utilitario +
+                '}';
     }
 }
 

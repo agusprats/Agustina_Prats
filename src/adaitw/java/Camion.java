@@ -1,23 +1,29 @@
 package adaitw.java;
 
-import java.util.List;
+import java.time.LocalDate;
 
-public class Camion extends Vehiculo {
+public class Camion extends Vehiculo{
+    private int ejes;
+    public Camion(Propietario propietario, int ejes, Boolean categoriaProfesional, LocalDate fechaAlta) {
+        super(propietario, categoriaProfesional, fechaAlta);
+        this.ejes = ejes;
+    }
 
-
-    public Camion(List<Propietario> propietarios, List<Autorizado> autorizados, String dominio, Boolean profesional) {
-        super(propietarios, autorizados, dominio, profesional);
+    public String fichaTecnica(){
+        return "Propietario: "+propietario.nombre;
     }
 
 
     @Override
     public String toString() {
         return "Camion{" +
-                "propietarios=" + getPropietarios() +
-                "autorizados=" + getAutorizados() +
-                ", dominio='" + dominio + '\'' +
-                ", profesional=" + profesional +
+                "Titularidad: " + propietario + '\'' +
+                ", Autorizados: " + getAutorizados() + '\'' +
+                // ", dominio='" + dominio + '\'' +
+                ", Ejes: " + ejes +
+                ", Categoria: " + getCategoriaProfesional() +
+                ", Fecha Alta:" + getFechaAlta() +
                 '}';
     }
-}
 
+}
