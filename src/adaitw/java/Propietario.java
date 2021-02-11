@@ -7,6 +7,7 @@ public class Propietario {
     protected String dni;
 
 
+
     public Propietario(String nombre, String direccion, String dni) {
         this.nombre = nombre;
         this.direccion = direccion;
@@ -43,7 +44,7 @@ public class Propietario {
     }
 
     public String fichaTitular(){
-        return "Propietario: "+nombre+" dni: "+dni;
+        return "Propietario: "+nombre+" Documento - CUIT: "+dni;
     }
 
 
@@ -52,7 +53,7 @@ public class Propietario {
     public String toString()
     {
         return "Propietario: "+this.nombre +
-                " - DNI:  " + this.dni; //+
+                " - DNI/CUIT:  " + this.dni; //+
         // " - Domicilio:  " + this.direccion;
 
     }

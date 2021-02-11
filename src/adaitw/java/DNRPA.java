@@ -1,5 +1,6 @@
 package adaitw.java;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,14 +13,16 @@ public class DNRPA {
         List<Seccional> seccionales = new ArrayList<>();
         List<AutoElectrico> autosElectricos = new ArrayList<>();
         List<Camion> camiones = new ArrayList<>();
+        List<Colectivo> colectivos = new ArrayList<>();
         List<Auto> autos = new ArrayList<>();
         List<Moto> motos = new ArrayList<>();
 
-
+        //Seccionales de Registro Nacional
         seccionales.add(new Seccional("S1", "CABA"));
         seccionales.add(new Seccional("S2", "CORDOBA"));
         seccionales.add(new Seccional("S3", "TUCUMAN"));
         seccionales.add(new Seccional("S4", "CORRIENTES"));
+
 
         // -----SECCIONAL S1 CABA-----
         Auto a1 = new Auto(new Propietario("Andy", "TUCUMAN", "TUC456"),
@@ -106,8 +109,16 @@ public class DNRPA {
                 false, LocalDate.of(2021, 01, 31));
         motos.add(m1);
 
+        Colectivo col1 = new Colectivo(new Propietario("TATA S.A", "IBERA", "20-333222-1" ),
+                3,
+                (JOptionPane.showInputDialog("Ingrese cantidad de asientos: ")),
+                true, LocalDate.of(2018,05,30));
+        col1.agregarAutorizado(new Autorizados("Francisco", "IBERA", "IBE223"));
+        colectivos.add(col1);
+
         seccionales.get(3).agregarVehiculo(ae1);
         seccionales.get(3).agregarVehiculo(m1);
+        seccionales.get(3).agregarVehiculo(col1);
         Seccional S4 = seccionales.get(3);
 
 
@@ -151,10 +162,13 @@ public class DNRPA {
             System.out.println("Propietario: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
         });
 
-        System.out.println("Total de Autos: "+autos.size());
         System.out.println("Total de Autos Electricos: "+autosElectricos.size());
         System.out.println("Total de Camiones: "+camiones.size());
+        System.out.println("Total de Camiones: "+colectivos.size());
+        System.out.println("Total de Autos: "+autos.size());
         System.out.println("Total de Motos: "+motos.size());
+
+
         for(int cont=0; cont < autos.size(); cont++){
             System.out.println("Categoria de autos: "+autos.get(cont).getCategoriaProfesional());
         }
