@@ -9,9 +9,9 @@ public class Seccional{
     private String provincia;
     protected List<Vehiculo> vehiculos;
     private List<Auto> autos = new ArrayList<>();
-    private List<AutoElectrico> autoElectrico= new ArrayList<>();
+    private List<AutoElectrico> autosElectricos= new ArrayList<>();
     private List<Moto> moto = new ArrayList<>();
-    private List<MotoElectrica> motoElectrica = new ArrayList<>();
+    private List<MotoElectrica> motosElectricas = new ArrayList<>();
     private List<Camion> camion = new ArrayList<>();
     private List<Colectivo> colectivo = new ArrayList<>();
     private List<Utilitario> utilitario = new ArrayList<>();
@@ -20,9 +20,9 @@ public class Seccional{
         this.codigoSeccional = codigoSeccional;
         this.provincia = provincia;
         this.autos = autos;
-        this.autoElectrico = autoElectrico;
+        this.autosElectricos = autosElectricos;
         this.moto = moto;
-        this.motoElectrica = motoElectrica;
+        this.motosElectricas = motosElectricas;
         this.camion = camion;
         this.colectivo = colectivo;
         this.utilitario = utilitario;
@@ -50,11 +50,11 @@ public class Seccional{
     }
 
     public List<AutoElectrico> getAutoElectrico() {
-        return autoElectrico;
+        return autosElectricos;
     }
 
     public void setAutoElectrico(List<AutoElectrico> autoElectrico) {
-        this.autoElectrico = autoElectrico;
+        this.autosElectricos = autosElectricos;
     }
 
     public List<Moto> getMoto() {
@@ -66,11 +66,11 @@ public class Seccional{
     }
 
     public List<MotoElectrica> getMotoElectrica() {
-        return motoElectrica;
+        return motosElectricas;
     }
 
     public void setMotoElectrica(List<MotoElectrica> motoElectrica) {
-        this.motoElectrica = motoElectrica;
+        this.motosElectricas = motosElectricas;
     }
 
     public List<Camion> getCamion() {
@@ -104,9 +104,9 @@ public class Seccional{
                 ", provincia='" + provincia + '\'' +
                 ", vehiculos=" + vehiculos +
                 ", autos=" + autos +
-                ", autoElectrico=" + autoElectrico +
+                ", autoElectrico=" + autosElectricos +
                 ", moto=" + moto +
-                ", motoElectrica=" + motoElectrica +
+                ", motoElectrica=" + motosElectricas +
                 ", camion=" + camion +
                 ", colectivo=" + colectivo +
                 ", utilitario=" + utilitario +

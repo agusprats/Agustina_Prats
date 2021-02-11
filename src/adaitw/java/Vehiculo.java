@@ -10,6 +10,7 @@ public abstract class Vehiculo {
     protected Boolean categoriaProfesional;
     private LocalDate fechaAlta;
     protected LocalDate nuevaFecha;
+    protected int cilindros;
 
 
     public Vehiculo(Propietario propietario, Boolean categoriaProfesional, LocalDate fechaAlta) {
@@ -17,9 +18,15 @@ public abstract class Vehiculo {
         this.autorizados = new ArrayList<>();
         this.dominio = dominio;
         this.categoriaProfesional = categoriaProfesional;
-        this.fechaAlta = LocalDate.now();
+        this.fechaAlta = fechaAlta;
         this.nuevaFecha = LocalDate.now();
+        this.cilindros= cilindros;
     }
+
+    /* Carga por defecto de categoria y fecha de ingreso a Registro
+    public Vehiculo(Propietario propietario){
+        this(propietario, false, LocalDate.now());
+    }*/
 
     public Propietario getPropietario() {
         return propietario;
@@ -89,6 +96,14 @@ public abstract class Vehiculo {
         this.dominio = dominio;
     }
 
+
+    public int getCilindros() {
+        return cilindros;
+    }
+
+    public void setCilindros(int cilindros) {
+        this.cilindros = cilindros;
+    }
 
     public String fichaTecnica(){
         return " "+propietario+" - Fecha Alta: "+fechaAlta;

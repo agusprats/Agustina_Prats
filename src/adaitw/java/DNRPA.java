@@ -11,25 +11,30 @@ public class DNRPA {
     public static void main(String[] args) {
         List<Seccional> seccionales = new ArrayList<>();
         List<Auto> autos = new ArrayList<>();
+        List<AutoElectrico> autosElectricos = new ArrayList<>();
         List<Camion> camiones = new ArrayList<>();
-        List<Propietario> propietarios = new ArrayList<>();
+        List<Moto> motos = new ArrayList<>();
 
 
         seccionales.add(new Seccional("S1", "CABA"));
         seccionales.add(new Seccional("S2", "CORDOBA"));
         seccionales.add(new Seccional("S3", "TUCUMAN"));
+        seccionales.add(new Seccional("S4", "CORRIENTES"));
 
         // -----SECCIONAL S1 CABA-----
-        Auto a1 = new Auto(new Propietario("Andy", "TUCUMAN", "TUC456"),  false,  LocalDate.now());
+        Auto a1 = new Auto(new Propietario("Andy", "TUCUMAN", "TUC456"),
+                false,  LocalDate.of(2019, 5, 23));
         a1.agregarAutorizado(new Autorizados("Marcos", "BSAS", "BSAS333"));
         a1.agregarAutorizado(new Autorizados("Marcelo", "BSAS", "BSAS873"));
         autos.add(a1);
 
-        Auto a2 = new Auto(new Propietario("Charly", "BRASIL", "123543"), false,  LocalDate.now());
+        Auto a2 = new Auto(new Propietario("Charly", "BRASIL", "123543"),
+                false,  LocalDate.of(2020, 4, 03));
         a2.agregarAutorizado(new Autorizados("Carlitos", "BRASIL", "BRA333"));
         autos.add(a2);
 
-        Camion ca1 = new Camion(new Propietario("Juan", "CHILE", "443344"),3,true,  LocalDate.now());
+        Camion ca1 = new Camion(new Propietario("Juan", "CHILE", "443344"),
+                3,true,  LocalDate.of(2018, 2, 22));
         ca1.agregarAutorizado(new Autorizados("Carlitos", "CHILE", "CHI3993"));
         camiones.add(ca1);
 
@@ -40,15 +45,18 @@ public class DNRPA {
 
 
         // -----SECCIONAL S2 CORDOBA-----
-        Auto a3 = new Auto(new Propietario("Adriana", "BRASIL", "BRA543"),true,  LocalDate.now());
+        Auto a3 = new Auto(new Propietario("Adriana", "BRASIL", "BRA543"),
+                true,  LocalDate.of(2021, 01, 10));
         a3.agregarAutorizado(new Autorizados("Caty", "BRASIL", "BRA773"));
         autos.add(a3);
 
-        Camion ca2 = new Camion(new Propietario("Pepe", "BOLIVIA", "BOL454"),3, true,  LocalDate.now());
+        Camion ca2 = new Camion(new Propietario("Pepe", "BOLIVIA", "BOL454"),
+                3, true,  LocalDate.of(2020, 07, 20));
         ca2.agregarAutorizado(new Autorizados("Pepito", "BOLIVIA", "BOL393"));
         camiones.add(ca2);
 
-        Camion ca3 = new Camion(new Propietario("Antonio", "VENEZUELA", "VEN004"),3,true,  LocalDate.now());
+        Camion ca3 = new Camion(new Propietario("Antonio", "VENEZUELA", "VEN004"),
+                3,true,  LocalDate.of(2019, 04, 27));
         ca3.agregarAutorizado(new Autorizados("Tito", "VENEZUELA", "VEN543"));
         camiones.add(ca3);
 
@@ -59,21 +67,25 @@ public class DNRPA {
 
 
         // ---SECCIONAL S3 TUCUMAN
-        Auto a4 = new Auto(new Propietario("Vero", "PERU", "PER223"), true,  LocalDate.now());
+        Auto a4 = new Auto(new Propietario("Vero", "PERU", "PER223"),
+                true,  LocalDate.of(2020, 9, 12));
         a4.agregarAutorizado(new Autorizados("Maria", "PERU", "PER703"));
         autos.add(a4);
 
-        Camion ca4 = new Camion(new Propietario("Luis", "MEXICO", "MEX114"), 3, true,  LocalDate.now());
+        Camion ca4 = new Camion(new Propietario("Luis", "MEXICO", "MEX114"),
+                3, true,  LocalDate.of(2020, 5, 23));
         ca4.agregarAutorizado(new Autorizados("Miguel", "MEXICO", "MEX983"));
         camiones.add(ca4);
 
-        Camion ca5 = new Camion(new Propietario("Oscar", "COLOMBIA", "COL304"), 3, true,  LocalDate.now());
+        Camion ca5 = new Camion(new Propietario("Oscar", "COLOMBIA", "COL304"),
+                3, true,  LocalDate.of(2018, 8, 14));
         ca5.agregarAutorizado(new Autorizados("Oscarcito", "COLOMBIA", "COL653"));
         ca5.cambiaPropietario(new Propietario("Lorenzo", "CABA", "CABA123"));
         ca5.asignarAltaNuevoTitular();
         camiones.add(ca5);
 //
-        Camion ca6 = new Camion(new Propietario("Amancio", "COSTA RICA", "CRI764"), 3, true,  LocalDate.now());
+        Camion ca6 = new Camion(new Propietario("Amancio", "COSTA RICA", "CRI764"),
+                3, true,  LocalDate.of(2020, 6, 06));
         ca6.agregarAutorizado(new Autorizados("Eduardo", "COSTA RICA", "CRI093"));
         camiones.add(ca6);
 
@@ -84,10 +96,25 @@ public class DNRPA {
         Seccional S3 = seccionales.get(2);
 
 
+        // ---SECCIONAL S4 CORRIENTES
+        AutoElectrico ae1 = new AutoElectrico(new Propietario("Ignacio", "CORRIENTES", "COR332"),
+                false, LocalDate.of(2020, 5, 23));
+        ae1.agregarAutorizado(new Autorizados("Gonzalo", "CORRIENTES", "COR223"));
+        autosElectricos.add(ae1);
+
+        Moto m1 = new Moto(new Propietario("Gero", "SALTA", "SAL332"),
+                false, LocalDate.of(2021, 01, 31));
+        motos.add(m1);
+
+        seccionales.get(3).agregarVehiculo(ae1);
+        seccionales.get(3).agregarVehiculo(m1);
+        Seccional S4 = seccionales.get(3);
+
+
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
-        System.out.println(autos);
+        System.out.println("Listar todos los autos. Autos a combustión: "+autos+" Autos Eléctricos: "+autosElectricos);
 
 
         // 2) Ordeno alfabéticamente propietarios camiones:
@@ -139,6 +166,8 @@ public class DNRPA {
             System.out.println("Ficha Tecnica Alta en Registro: "+autos.get(cont).fichaTecnica());
         }
 
+        //(JOptionPane.showInputDialog("Ingrese: AUTO - MOTO - COLECTIVO - UTILITARIO - CAMION")),
+        //import javax.swing.*;
 
         /*Forma Lambda 1
         Collections.sort(camiones, Comparator.comparing(o -> o.propietario));
@@ -150,8 +179,6 @@ public class DNRPA {
 
     }
 }
-
-
 
 
 /*                         ******* ANOTACIONES *******
