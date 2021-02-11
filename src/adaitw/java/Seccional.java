@@ -98,19 +98,9 @@ public class Seccional{
         this.utilitario = utilitario;
     }
 
-    /*public String mostrarAutos() {
-        System.out.println("Autos Consumo Combustión: " + autos+ "Autos Consumo Eléctrico: " + autosElectricos);
+    public  String getMostrarAutos(List<AutoElectrico> autosElectricos , List<Auto> autos) {
+        return "Autos Consumo Eléctrico: "+autos+'\''+" Autos Consumo Eléctrico: " +autosElectricos;
     }
-
-        System.out.println("Fecha Alta: " + fecha);
-        System.out.println("Fecha Ultima Transferencia: " + fechaTranf);
-        System.out.println("Cedula Verde Vencida: " + (pasoMasde1AnioUltimoTitular() ? "Si" : "No"));
-        System.out.println("Titular: " + propietario.getNombre());
-        System.out.println("Uso: " + (usoParticular ? "Particular" : "Profesional"));
-        System.out.println("Tipo: " + tipo);
-        System.out.println("Electrico: " + (esElectrico ? "Si" : "No"));
-        System.out.println("Autorizados: " + autorizados.size() + " conductor/es");*/
-
 
     @Override
     public String toString() {

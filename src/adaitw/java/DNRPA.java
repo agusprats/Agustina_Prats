@@ -115,7 +115,7 @@ public class DNRPA {
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
         System.out.println("Listar todos los autos. Autos a combustión: "+autos+" Autos Eléctricos: "+autosElectricos);
-        //System.out.println(seccionales.mostrarAutos());
+
 
         // 2) Ordeno alfabéticamente propietarios camiones:
         Collections.sort(camiones, new Comparator<Camion>() {
@@ -166,6 +166,7 @@ public class DNRPA {
         for(int cont=0; cont < autos.size(); cont++){
             System.out.println("Ficha Tecnica Alta en Registro: "+autos.get(cont).fichaTecnica());
         }
+
 
         //(JOptionPane.showInputDialog("Ingrese: AUTO - MOTO - COLECTIVO - UTILITARIO - CAMION")),
         //import javax.swing.*;
