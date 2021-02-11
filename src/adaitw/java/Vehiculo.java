@@ -19,7 +19,7 @@ public abstract class Vehiculo {
         this.dominio = dominio;
         this.categoriaProfesional = categoriaProfesional;
         this.fechaAlta = fechaAlta;
-        this.nuevaFecha = LocalDate.now();
+        this.nuevaFecha = nuevaFecha;
         this.cilindros= cilindros;
     }
 
@@ -66,6 +66,7 @@ public abstract class Vehiculo {
         return fechaAlta;
     }
 
+
     // Nuevo Propietario
     public void cambiaPropietario(Propietario propietario){
         this.propietario = propietario;
@@ -75,14 +76,14 @@ public abstract class Vehiculo {
     }
 
     // Fecha de Alta de Nuevo Propietario
-    public void asignarAltaNuevoTitular(){
-        this.nuevaFecha = LocalDate.now();
+    public void asignarAltaNuevoTitular(LocalDate nuevaFecha){
+        this.nuevaFecha = nuevaFecha;
     }
     public String fechaCambioTitular(){
-        return "Cambio Titular Fecha: "+nuevaFecha;
+        return "Nueva Alta: "+nuevaFecha;
     }
 
-    //DOMINIO
+    // DOMINIO
     public void agregarDominio(){
         int dominio = (int)Math.random();
         System.out.println("Dominio nª: " + dominio);
@@ -106,7 +107,7 @@ public abstract class Vehiculo {
     }
 
     public String fichaTecnica(){
-        return " "+propietario+" - Fecha Alta: "+fechaAlta;
+        return " "+propietario+" - Fecha Alta: "+fechaAlta+" - Fecha Cambio Titular: "+fechaCambioTitular();
     }
 
     //print propietarios details en main()

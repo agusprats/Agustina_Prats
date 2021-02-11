@@ -23,6 +23,7 @@ public class Camion extends Vehiculo{
                 ", Ejes: " + ejes +
                 ", Categoria: " + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
+                ", Fecha Cambio Titular: "+fechaCambioTitular()+
                 '}';
     }
 

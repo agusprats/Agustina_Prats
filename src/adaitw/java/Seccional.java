@@ -16,6 +16,7 @@ public class Seccional{
     private List<Colectivo> colectivo = new ArrayList<>();
     private List<Utilitario> utilitario = new ArrayList<>();
 
+
     public Seccional(String codigoSeccional, String provincia ) {
         this.codigoSeccional = codigoSeccional;
         this.provincia = provincia;
@@ -49,11 +50,11 @@ public class Seccional{
         this.autos = autos;
     }
 
-    public List<AutoElectrico> getAutoElectrico() {
+    public List<AutoElectrico> getAutosElectricos() {
         return autosElectricos;
     }
 
-    public void setAutoElectrico(List<AutoElectrico> autoElectrico) {
+    public void setAutoElectrico(List<AutoElectrico> autosElectricos) {
         this.autosElectricos = autosElectricos;
     }
 
@@ -96,6 +97,20 @@ public class Seccional{
     public void setUtilitario(List<Utilitario> utilitario) {
         this.utilitario = utilitario;
     }
+
+    /*public String mostrarAutos() {
+        System.out.println("Autos Consumo Combustión: " + autos+ "Autos Consumo Eléctrico: " + autosElectricos);
+    }
+
+        System.out.println("Fecha Alta: " + fecha);
+        System.out.println("Fecha Ultima Transferencia: " + fechaTranf);
+        System.out.println("Cedula Verde Vencida: " + (pasoMasde1AnioUltimoTitular() ? "Si" : "No"));
+        System.out.println("Titular: " + propietario.getNombre());
+        System.out.println("Uso: " + (usoParticular ? "Particular" : "Profesional"));
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Electrico: " + (esElectrico ? "Si" : "No"));
+        System.out.println("Autorizados: " + autorizados.size() + " conductor/es");*/
+
 
     @Override
     public String toString() {

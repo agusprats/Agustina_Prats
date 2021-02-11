@@ -18,6 +18,7 @@ public class AutoElectrico extends Vehiculo{
                 // ", dominio='" + dominio + '\'' +
                 ", Categoria:" + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
+                ", Fecha Cambio Titular: "+fechaCambioTitular()+
                 '}';
     }
 }

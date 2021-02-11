@@ -19,6 +19,7 @@ public class Auto extends Vehiculo{
                 // ", dominio='" + dominio + '\'' +
                 ", Categoria:" + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
+                ", Fecha Cambio Titular: "+fechaCambioTitular()+
                 '}';
     }
 }

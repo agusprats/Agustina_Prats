@@ -19,6 +19,7 @@ public class Utilitario extends Vehiculo{
                 //", dominio='" + dominio + '\'' +
                 ", profesional=" + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
+                ", Fecha Cambio Titular: "+fechaCambioTitular()+
                 '}';
     }
 }

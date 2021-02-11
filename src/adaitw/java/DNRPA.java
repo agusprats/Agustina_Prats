@@ -10,9 +10,9 @@ public class DNRPA {
 
     public static void main(String[] args) {
         List<Seccional> seccionales = new ArrayList<>();
-        List<Auto> autos = new ArrayList<>();
         List<AutoElectrico> autosElectricos = new ArrayList<>();
         List<Camion> camiones = new ArrayList<>();
+        List<Auto> autos = new ArrayList<>();
         List<Moto> motos = new ArrayList<>();
 
 
@@ -81,7 +81,7 @@ public class DNRPA {
                 3, true,  LocalDate.of(2018, 8, 14));
         ca5.agregarAutorizado(new Autorizados("Oscarcito", "COLOMBIA", "COL653"));
         ca5.cambiaPropietario(new Propietario("Lorenzo", "CABA", "CABA123"));
-        ca5.asignarAltaNuevoTitular();
+        ca5.asignarAltaNuevoTitular(LocalDate.of(2021, 02,05));
         camiones.add(ca5);
 //
         Camion ca6 = new Camion(new Propietario("Amancio", "COSTA RICA", "CRI764"),
@@ -115,7 +115,7 @@ public class DNRPA {
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
         System.out.println("Listar todos los autos. Autos a combustión: "+autos+" Autos Eléctricos: "+autosElectricos);
-
+        //System.out.println(seccionales.mostrarAutos());
 
         // 2) Ordeno alfabéticamente propietarios camiones:
         Collections.sort(camiones, new Comparator<Camion>() {
@@ -127,7 +127,7 @@ public class DNRPA {
         System.out.println("Listado alfabético propietarios camiones: "+camiones);
 
 
-        // 3) Registrar Fecha de alta: OK ===> localDate.now()
+        // 3) Registrar Fecha de alta: OK ===> localDate.of()
 
 
         // 4) Cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
@@ -151,9 +151,10 @@ public class DNRPA {
             System.out.println("Propietario: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
         });
 
-        System.out.println("Cantidad total de autos: "+autos.size());
-        System.out.println("Cantidad total de camiones: "+camiones.size());
-
+        System.out.println("Total de Autos: "+autos.size());
+        System.out.println("Total de Autos Electricos: "+autosElectricos.size());
+        System.out.println("Total de Camiones: "+camiones.size());
+        System.out.println("Total de Motos: "+motos.size());
         for(int cont=0; cont < autos.size(); cont++){
             System.out.println("Categoria de autos: "+autos.get(cont).getCategoriaProfesional());
         }

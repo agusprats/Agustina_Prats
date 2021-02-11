@@ -22,6 +22,7 @@ public class Colectivo extends Vehiculo{
                 ", Cantidad Asientos: " + asientos +
                 ", Categoria: " + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
+                ", Fecha Cambio Titular: "+fechaCambioTitular()+
                 '}';
     }
 
