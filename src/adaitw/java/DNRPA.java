@@ -113,7 +113,7 @@ public class DNRPA {
 
         Colectivo col1 = new Colectivo(new Propietario("TATA S.A", "IBERA", "20-333222-1" ),
                 3,
-                (JOptionPane.showInputDialog("Ingrese cantidad de asientos: ")),
+                (JOptionPane.showInputDialog("Ingrese cantidad de asientos para COLECTIVO col1: ")),
                 true, LocalDate.of(2018,05,30));
         col1.agregarAutorizado(new Autorizados("Francisco", "IBERA", "IBE223"));
         colectivos.add(col1);
