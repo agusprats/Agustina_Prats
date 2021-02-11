@@ -14,7 +14,7 @@ public class Propietario {
         this.dni = dni;
     }
 
-    //Carga por defecto ante falta de información:
+    //Constructor opcional. Carga por defecto ante falta de información:
     public Propietario(String nombre){
         this(nombre, "Sin datos", "Sin datos" );
     }

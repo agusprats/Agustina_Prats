@@ -9,13 +9,12 @@ public class Seccional{
     private String provincia;
     protected List<Vehiculo> vehiculos;
     private List<Auto> autos = new ArrayList<>();
-    private List<AutoElectrico> autosElectricos= new ArrayList<>();
     private List<Moto> moto = new ArrayList<>();
-    private List<MotoElectrica> motosElectricas = new ArrayList<>();
     private List<Camion> camion = new ArrayList<>();
     private List<Colectivo> colectivo = new ArrayList<>();
     private List<Utilitario> utilitario = new ArrayList<>();
-
+    private List<MotoElectrica> motosElectricas = new ArrayList<>();
+    private List<AutoElectrico> autosElectricos= new ArrayList<>();
 
     public Seccional(String codigoSeccional, String provincia ) {
         this.codigoSeccional = codigoSeccional;

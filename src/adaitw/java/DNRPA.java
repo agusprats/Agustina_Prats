@@ -12,8 +12,9 @@ public class DNRPA {
     public static void main(String[] args) {
         List<Seccional> seccionales = new ArrayList<>();
         List<AutoElectrico> autosElectricos = new ArrayList<>();
-        List<Camion> camiones = new ArrayList<>();
+        List<Utilitario> utilitarios = new ArrayList<>();
         List<Colectivo> colectivos = new ArrayList<>();
+        List<Camion> camiones = new ArrayList<>();
         List<Auto> autos = new ArrayList<>();
         List<Moto> motos = new ArrayList<>();
 
@@ -107,6 +108,7 @@ public class DNRPA {
 
         Moto m1 = new Moto(new Propietario("Gero", "SALTA", "SAL332"),
                 false, LocalDate.of(2021, 01, 31));
+        m1.cargarDominio();
         motos.add(m1);
 
         Colectivo col1 = new Colectivo(new Propietario("TATA S.A", "IBERA", "20-333222-1" ),
@@ -116,16 +118,21 @@ public class DNRPA {
         col1.agregarAutorizado(new Autorizados("Francisco", "IBERA", "IBE223"));
         colectivos.add(col1);
 
+        Utilitario u1 = new Utilitario(new Propietario("Santiago","" ,"" ),true,
+                LocalDate.of(2018, 3,4));
+        utilitarios.add(u1);
+
         seccionales.get(3).agregarVehiculo(ae1);
         seccionales.get(3).agregarVehiculo(m1);
         seccionales.get(3).agregarVehiculo(col1);
+        seccionales.get(3).agregarVehiculo(u1);
         Seccional S4 = seccionales.get(3);
 
 
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
-        System.out.println("Listar todos los autos. Autos a combustión: "+autos+" Autos Eléctricos: "+autosElectricos);
+        System.out.println("Listar AUTOS: Motor Combustión ==> "+autos+" Motor Eléctrico ==> "+autosElectricos);
 
 
         // 2) Ordeno alfabéticamente propietarios camiones:
@@ -146,7 +153,7 @@ public class DNRPA {
 
         // 5) Registrar Fecha cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
         System.out.println(ca5.fechaCambioTitular());
-
+        System.out.println("DATOS COMPLETOS CAMION ca5: "+ca5);
         // 6) Asignar Patente Automáticamente:
 
 
@@ -156,7 +163,6 @@ public class DNRPA {
         //  <= <= <=   OTRAS CONSULTAS   => => =>
         System.out.println("Listado Seccionales completo: "+seccionales);
         System.out.println("Vehiculos de Seccional S1: "+S1.vehiculos);
-        System.out.println(ca5);
 
         camiones.forEach((camion)->{
             System.out.println("Propietario: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
@@ -164,7 +170,7 @@ public class DNRPA {
 
         System.out.println("Total de Autos Electricos: "+autosElectricos.size());
         System.out.println("Total de Camiones: "+camiones.size());
-        System.out.println("Total de Camiones: "+colectivos.size());
+        System.out.println("Total de Colectivos: "+colectivos.size());
         System.out.println("Total de Autos: "+autos.size());
         System.out.println("Total de Motos: "+motos.size());
 

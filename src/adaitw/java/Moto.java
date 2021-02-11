@@ -11,10 +11,8 @@ public class Moto extends Vehiculo{
     public String toString() {
         return "Moto{" +
                 "Propietario: " + propietario + '\'' +
-                // ", Direccion: " + direccion + '\'' +
-                // ", DNI: " + dni + '\'' +
                 ", Autorizados:'" + getAutorizados() + '\'' +
-                // ", dominio='" + dominio + '\'' +
+                ", dominio='" + getDominio() + '\'' +
                 ", Categoria:" + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
                 ", Fecha Cambio Titular: "+fechaCambioTitular()+

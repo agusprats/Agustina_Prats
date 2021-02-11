@@ -23,10 +23,11 @@ public abstract class Vehiculo {
         this.cilindros= cilindros;
     }
 
-    /* Carga por defecto de categoria y fecha de ingreso a Registro
+
+    // CONSTRUCTOR ALTERNATIVO ===> Carga por defecto de categoria y fecha de ingreso a Registro
     public Vehiculo(Propietario propietario){
         this(propietario, false, LocalDate.now());
-    }*/
+    }
 
     public Propietario getPropietario() {
         return propietario;
@@ -84,7 +85,7 @@ public abstract class Vehiculo {
     }
 
     // DOMINIO
-    public void agregarDominio(){
+    public void cargarDominio(){
         int dominio = (int)Math.random();
         System.out.println("Dominio nª: " + dominio);
     }
