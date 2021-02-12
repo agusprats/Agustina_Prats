@@ -98,12 +98,9 @@ public class Seccional{
     }
 
     public static Object mostrarAutos(List<AutoElectrico> autosElectricos, List<Auto> autos){
-        return "Autos Motor Eléctrico ===> "+autosElectricos+'\''+" Autos Motor Combustión ===> " +autos;
+        return "Motor Eléctrico ===> "+autosElectricos+'\''+" Motor Combustión ===> " +autos;
     }
 
-    public String MostrarAutos() {
-        return "Autos Motor Combustión: "+autos+'\''+" Autos Motor Eléctrico : " +autosElectricos;
-    }
 
     @Override
     public String toString() {
