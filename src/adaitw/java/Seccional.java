@@ -8,13 +8,13 @@ public class Seccional{
     private String codigoSeccional;
     private String provincia;
     protected List<Vehiculo> vehiculos;
-    private List<Auto> autos = new ArrayList<>();
-    private List<Moto> moto = new ArrayList<>();
-    private List<Camion> camion = new ArrayList<>();
-    private List<Colectivo> colectivo = new ArrayList<>();
-    private List<Utilitario> utilitario = new ArrayList<>();
-    private List<MotoElectrica> motosElectricas = new ArrayList<>();
-    private List<AutoElectrico> autosElectricos= new ArrayList<>();
+    protected List<Auto> autos = new ArrayList<>();
+    protected List<Moto> moto = new ArrayList<>();
+    protected List<Camion> camion = new ArrayList<>();
+    protected List<Colectivo> colectivo = new ArrayList<>();
+    protected List<Utilitario> utilitario = new ArrayList<>();
+    protected List<MotoElectrica> motosElectricas = new ArrayList<>();
+    protected List<AutoElectrico> autosElectricos= new ArrayList<>();
 
     public Seccional(String codigoSeccional, String provincia ) {
         this.codigoSeccional = codigoSeccional;
@@ -97,7 +97,11 @@ public class Seccional{
         this.utilitario = utilitario;
     }
 
-    public  String getMostrarAutos(List<AutoElectrico> autosElectricos , List<Auto> autos) {
+    public static Object mostrarAutos(List<AutoElectrico> autosElectricos, List<Auto> autos){
+        return "Autos Motor Eléctrico ===> "+autosElectricos+'\''+" Autos Motor Combustión ===> " +autos;
+    }
+
+    public String MostrarAutos() {
         return "Autos Motor Combustión: "+autos+'\''+" Autos Motor Eléctrico : " +autosElectricos;
     }
 

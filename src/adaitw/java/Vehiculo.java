@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class Vehiculo {
     protected Propietario propietario;
     private List<Autorizados> autorizados;
-    protected double dominio;
+    protected int dominio;
     protected Boolean categoriaProfesional;
     private LocalDate fechaAlta;
     protected LocalDate nuevaFecha;
@@ -87,12 +87,12 @@ public abstract class Vehiculo {
     }
 
     // DOMINIO
-    public void cargarDominio() {
-        double dominio = (double)Math.random();
+    /*public void cargarDominio() {
+        int dominio = (int)(Math.random()*100);
         System.out.println("Dominio nª: " + dominio);
-    }
+    }*/
 
-    public double getDominio() {
+    public int getDominio() {
         return dominio;
     }
 

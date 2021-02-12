@@ -11,7 +11,7 @@ public class AutoElectrico extends Vehiculo{
     @Override
     public String toString() {
         return "Auto Electrico{" +
-                "Propietario: " + propietario + '\'' +
+                "Titularidad: " + propietario + '\'' +
                 // ", Direccion: " + direccion + '\'' +
                 //  ", DNI: " + dni + '\'' +
                 ", Autorizados:'" + getAutorizados() + '\'' +

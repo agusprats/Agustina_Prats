@@ -2,10 +2,7 @@ package adaitw.java;
 
 import javax.swing.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class DNRPA {
 
@@ -108,7 +105,7 @@ public class DNRPA {
 
         Moto m1 = new Moto(new Propietario("Gero", "SALTA", "SAL332"),
                 false, LocalDate.of(2021, 01, 31));
-        m1.cargarDominio();
+        //m1.cargarDominio();
         motos.add(m1);
 
         Colectivo col1 = new Colectivo(new Propietario("TATA S.A", "IBERA", "20-333222-1" ),
@@ -132,8 +129,8 @@ public class DNRPA {
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
-        System.out.println("Listar AUTOS: Motor Combustión ==> "+autos+" Motor Eléctrico ==> "+autosElectricos);
-
+        System.out.println("Listar Total Autos: "+Seccional.mostrarAutos(autosElectricos, autos));
+        /*System.out.println("Listar AUTOS: Motor Combustión ==> "+autos+" Motor Eléctrico ==> "+autosElectricos);*/
 
         // 2) Ordeno alfabéticamente propietarios camiones:
         Collections.sort(camiones, new Comparator<Camion>() {
@@ -142,7 +139,7 @@ public class DNRPA {
                 return o1.propietario.nombre.compareTo(o2.propietario.nombre);
             }
         });
-        System.out.println("Listado alfabético propietarios camiones: "+camiones);
+        System.out.println("Listado alfabético PROPIETARIOS CAMIONES: "+camiones);
 
 
         // 3) Registrar Fecha de alta: OK ===> localDate.of()
@@ -155,7 +152,7 @@ public class DNRPA {
         System.out.println(ca5.fechaCambioTitular());
         System.out.println("DATOS COMPLETOS CAMION ca5: "+ca5);
         // 6) Asignar Patente Automáticamente:
-        System.out.println(m1.getDominio());
+           //System.out.println(m1.getDominio());
 
         // 7) Consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular.
 
@@ -200,6 +197,7 @@ public class DNRPA {
         System.out.println("Listado propietarios camiones y nº dominio: "+camiones);*/
 
     }
+
 }
 
 
