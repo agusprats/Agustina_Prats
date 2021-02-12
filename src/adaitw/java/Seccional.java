@@ -98,7 +98,7 @@ public class Seccional{
     }
 
     public  String getMostrarAutos(List<AutoElectrico> autosElectricos , List<Auto> autos) {
-        return "Autos Consumo Eléctrico: "+autos+'\''+" Autos Consumo Eléctrico: " +autosElectricos;
+        return "Autos Motor Combustión: "+autos+'\''+" Autos Motor Eléctrico : " +autosElectricos;
     }
 
     @Override

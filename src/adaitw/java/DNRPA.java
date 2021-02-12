@@ -155,7 +155,7 @@ public class DNRPA {
         System.out.println(ca5.fechaCambioTitular());
         System.out.println("DATOS COMPLETOS CAMION ca5: "+ca5);
         // 6) Asignar Patente Automáticamente:
-
+        System.out.println(m1.getDominio());
 
         // 7) Consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular.
 
@@ -165,7 +165,7 @@ public class DNRPA {
         System.out.println("Vehiculos de Seccional S1: "+S1.vehiculos);
 
         camiones.forEach((camion)->{
-            System.out.println("Propietario: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
+            System.out.println("Camiones: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
         });
 
         System.out.println("Total de Autos Electricos: "+autosElectricos.size());

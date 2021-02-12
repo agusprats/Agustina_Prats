@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class Vehiculo {
     protected Propietario propietario;
     private List<Autorizados> autorizados;
-    protected String dominio;
+    protected double dominio;
     protected Boolean categoriaProfesional;
     private LocalDate fechaAlta;
     protected LocalDate nuevaFecha;
@@ -20,12 +20,12 @@ public abstract class Vehiculo {
         this.categoriaProfesional = categoriaProfesional;
         this.fechaAlta = fechaAlta;
         this.nuevaFecha = nuevaFecha;
-        this.cilindros= cilindros;
+        this.cilindros = cilindros;
     }
 
 
     // CONSTRUCTOR ALTERNATIVO ===> Carga por defecto de categoria y fecha de ingreso a Registro
-    public Vehiculo(Propietario propietario){
+    public Vehiculo(Propietario propietario) {
         this(propietario, false, LocalDate.now());
     }
 
@@ -51,11 +51,11 @@ public abstract class Vehiculo {
         if (categoriaProfesional) {
             return " Profesional";
         } else {
-            return  " Particular";
+            return " Particular";
         }
     }
 
-    public void setCategoria (String categoriaProfesional){
+    public void setCategoria(String categoriaProfesional) {
         if (categoriaProfesional.equalsIgnoreCase("si")) {
             this.categoriaProfesional = true;
         } else {
@@ -69,33 +69,31 @@ public abstract class Vehiculo {
 
 
     // Nuevo Propietario
-    public void cambiaPropietario(Propietario propietario){
+    public void cambiaPropietario(Propietario propietario) {
         this.propietario = propietario;
     }
-    public String nuevoPropietario(){
-        return "El nuevo Titular del vehiculo es: "+propietario;
+
+    public String nuevoPropietario() {
+        return "El nuevo Titular del vehiculo es: " + propietario;
     }
 
     // Fecha de Alta de Nuevo Propietario
-    public void asignarAltaNuevoTitular(LocalDate nuevaFecha){
+    public void asignarAltaNuevoTitular(LocalDate nuevaFecha) {
         this.nuevaFecha = nuevaFecha;
     }
-    public String fechaCambioTitular(){
-        return "Nueva Alta: "+nuevaFecha;
+
+    public String fechaCambioTitular() {
+        return "Nueva Alta: " + nuevaFecha;
     }
 
     // DOMINIO
-    public void cargarDominio(){
-        int dominio = (int)Math.random();
+    public void cargarDominio() {
+        double dominio = (double)Math.random();
         System.out.println("Dominio nª: " + dominio);
     }
 
-    public String getDominio() {
+    public double getDominio() {
         return dominio;
-    }
-
-    public void setDominio(String dominio) {
-        this.dominio = dominio;
     }
 
 
@@ -107,17 +105,16 @@ public abstract class Vehiculo {
         this.cilindros = cilindros;
     }
 
-    public String fichaTecnica(){
-        return " "+propietario+" - Fecha Alta: "+fechaAlta+" - Fecha Cambio Titular: "+fechaCambioTitular();
+    public String fichaTecnica() {
+        return " " + propietario + " - Fecha Alta: " + fechaAlta + " - Fecha Cambio Titular: " + fechaCambioTitular();
     }
 
     //print propietarios details en main()
-    public String toString()
-    {
+    public String toString() {
         return this.propietario +
                 " " + this.dominio;
     }
-}
 
+}
 
 
