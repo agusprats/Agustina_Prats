@@ -104,7 +104,7 @@ public class Seccional{
     @Override
     public String toString() {
         return "Seccional{" +
-                "codigoSeccional='" + codigo + '\'' +
+                "codigo='" + codigo + '\'' +
                 ", provincia='" + provincia + '\'' +
                 ", vehiculos=" + vehiculos +
                 ", autos=" + autos +

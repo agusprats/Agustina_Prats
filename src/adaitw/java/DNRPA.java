@@ -1,8 +1,12 @@
 package adaitw.java;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import javax.swing.*;
+import java.util.Iterator;
 import java.time.LocalDate;
 import java.util.*;
+
 
 public class DNRPA {
 
@@ -130,37 +134,60 @@ public class DNRPA {
 
 
         // **** Pantalla Bienvenida y elección de seccional ****
-        String usuario = JOptionPane.showInputDialog("   ***   Bienvenid@ a la D.N.R.P.A.   ***\n Introduce tu Nombre por favor: ");
-        String eleccionSeccional = JOptionPane.showInputDialog("*   BIENVENIDO "+usuario+" * \n Elige una opción:\n 0 = Listar Total Seccionales\n 1 = Listar Total Autos  \n 2 = Seccional CABA \n 3 = Seccional Córdoba \n 4 = Seccional Tucumán \n 5 = Seccional Corrientes \n Escribe el NUMERO correspondiente:");
-        switch (eleccionSeccional){
+        String usuario = JOptionPane.showInputDialog("   ***    Bienvenid@ a la D.N.R.P.A.   ***\n Introduce tu Nombre por favor: ");
+        String consultas = JOptionPane.showInputDialog("*       BIENVENIDO "+usuario+"      * \n Opciones de Consultas a DNRPA:\n 0 ==> Listar Total Autos\n 1 ==> Total Seccionales y Vehículos \n 2 ==> Propietarios Camiones [A-Z]  \n 3 ==> Seccional CABA \n 4 ==> Seccional Córdoba \n 5 ==> Seccional Tucumán \n 6 ==> Seccional Corrientes \n Escribe el NUMERO correspondiente:");
+        switch (consultas){
             case "0":
-                System.out.println("Listar Total Vehículos "+seccionales);
-                break;
-            case "1":
                 System.out.println("Listar Total AUTOS "+Seccional.mostrarAutos(autosElectricos, autos));
                 break;
+            case "1":
+                Iterator<Seccional> se = seccionales.iterator();
+                while(se.hasNext()) {
+                    System.out.println(se.next());
+                }
+                break;
             case "2":
-                System.out.println("Total Vehículos "+S1);
+                Collections.sort(camiones, new Comparator<Camion>() {
+                    @Override
+                    public int compare(Camion o1, Camion o2) {
+                        return o1.propietario.nombre.compareTo(o2.propietario.nombre);
+                    }
+                });
+                Iterator<Camion> camionIterator = camiones.iterator();
+                while(camionIterator.hasNext()) {
+                    System.out.println(camionIterator.next());
+                }
                 break;
             case "3":
-                System.out.println("Total Vehículos "+S2);
+                System.out.println("Total Vehículos "+S1);
                 break;
             case "4":
-                System.out.println("Total Vehículos "+S3);
+                System.out.println("Total Vehículos "+S2);
                 break;
             case "5":
+                System.out.println("Total Vehículos "+S3);
+                break;
+            case "6":
                 System.out.println("Total Vehículos "+S4);
                 break;
         }
 
         //Items del Integrador ===> ===> ===> ===>
+        System.out.println("");
+        System.out.println("");
+        System.out.println("------------------------------------------------ INTEGRADOR -----------------------------------------------------");
+        System.out.println("");
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
+        System.out.println("------------------------------------------ LISTAR TOTALIDAD AUTOS -----------------------------------------------");
         System.out.println("Listar Total Autos: "+Seccional.mostrarAutos(autosElectricos, autos));
         //System.out.println("Motor Combustión ==> "+autos+" Motor Eléctrico ==> "+autosElectricos);*/
         //Averiguar collections Iterable
 
+
         // 2) Ordeno alfabéticamente propietarios camiones:
+        System.out.println("");
+        System.out.println("------------------------------------ PROPIETARIOS CAMIONES ALFABETICAMENTE --------------------------------------");
         Collections.sort(camiones, new Comparator<Camion>() {
             @Override
             public int compare(Camion o1, Camion o2) {
@@ -173,11 +200,14 @@ public class DNRPA {
 
 
         // 4) Cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
+        System.out.println("");
+        System.out.println("--------------------------------------- REGISTRAR CAMBIO TITULARIDAD Y FECHA ---------------------------------------");
         System.out.println(ca5.nuevoPropietario());
 
         // 5) Registrar Fecha cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
         System.out.println(ca5.fechaCambioTitular());
         System.out.println("DATOS COMPLETOS CAMION ca5: "+ca5);
+
         // 6) Asignar Patente Automáticamente:
            //System.out.println(m1.getDominio());
 
@@ -187,10 +217,10 @@ public class DNRPA {
 
 
         //  <= <= <=   OTRAS CONSULTAS   => => =>
-
-        //System.out.println("Listar Todas las Seccionales: "+seccionales);
+        System.out.println("");
+        System.out.println("Listar Todas las Seccionales: "+seccionales);
         //System.out.println("Vehiculos de Seccional S1: "+S1.vehiculos);
-
+        System.out.println("");
         camiones.forEach((camion)->{
             System.out.println("Camiones: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
         });
@@ -201,17 +231,12 @@ public class DNRPA {
         System.out.println("Total de Autos: "+autos.size());
         System.out.println("Total de Motos: "+motos.size());
 
-
-        for(int cont=0; cont < autos.size(); cont++){
-            System.out.println("Categoria de autos: "+autos.get(cont).getCategoriaProfesional());
-        }
-
-        for(int cont=0; cont < camiones.size(); cont++){
-            System.out.println("Propietarios de Camiones: "+camiones.get(cont).getPropietario());
-        }
-
         for(int cont=0; cont < autos.size(); cont++){
             System.out.println("Ficha Tecnica Alta en Registro: "+autos.get(cont).fichaTecnica());
+        }
+
+        for(int cont=0; cont < colectivos.size(); cont++){
+            System.out.println("Propietarios de Camiones: "+colectivos.get(cont).getPropietario());
         }
 
 
