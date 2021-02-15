@@ -5,27 +5,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Seccional{
-    private String codigoSeccional;
-    private String provincia;
+    protected String codigo;
+    protected String provincia;
     protected List<Vehiculo> vehiculos;
-    protected List<Auto> autos = new ArrayList<>();
-    protected List<Moto> moto = new ArrayList<>();
-    protected List<Camion> camion = new ArrayList<>();
-    protected List<Colectivo> colectivo = new ArrayList<>();
-    protected List<Utilitario> utilitario = new ArrayList<>();
-    protected List<MotoElectrica> motosElectricas = new ArrayList<>();
-    protected List<AutoElectrico> autosElectricos= new ArrayList<>();
+    protected List<Auto> autos ;
+    protected List<Moto> moto;
+    protected List<Camion> camion;
+    protected List<Colectivo> colectivo;
+    protected List<Utilitario> utilitario;
+    protected List<MotoElectrica> motosElectricas;
+    protected List<AutoElectrico> autosElectricos;
 
-    public Seccional(String codigoSeccional, String provincia ) {
-        this.codigoSeccional = codigoSeccional;
+    public Seccional(String codigo, String provincia ) {
+        this.codigo = codigo;
         this.provincia = provincia;
-        this.autos = autos;
-        this.autosElectricos = autosElectricos;
-        this.moto = moto;
-        this.motosElectricas = motosElectricas;
-        this.camion = camion;
-        this.colectivo = colectivo;
-        this.utilitario = utilitario;
+        this.autos = new ArrayList<>();
+        this.autosElectricos = new ArrayList<>();
+        this.moto  = new ArrayList<>();
+        this.motosElectricas  = new ArrayList<>();
+        this.camion  = new ArrayList<>();
+        this.colectivo  = new ArrayList<>();
+        this.utilitario  = new ArrayList<>();
         this.vehiculos= new ArrayList<>();
     }
 
@@ -34,7 +34,7 @@ public class Seccional{
     }
 
     public String getCodigoSeccional() {
-        return codigoSeccional;
+        return codigo;
     }
 
     public String getProvincia() {
@@ -101,11 +101,10 @@ public class Seccional{
         return "Motor Eléctrico ===> "+autosElectricos+'\''+" Motor Combustión ===> " +autos;
     }
 
-
     @Override
     public String toString() {
         return "Seccional{" +
-                "codigoSeccional='" + codigoSeccional + '\'' +
+                "codigoSeccional='" + codigo + '\'' +
                 ", provincia='" + provincia + '\'' +
                 ", vehiculos=" + vehiculos +
                 ", autos=" + autos +
