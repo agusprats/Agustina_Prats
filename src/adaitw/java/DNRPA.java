@@ -8,9 +8,6 @@ public class DNRPA {
 
     public static void main(String[] args) {
 
-        // ---- WELCOME ----//
-
-
         List<Seccional> seccionales = new ArrayList<>();
         List<AutoElectrico> autosElectricos = new ArrayList<>();
         List<Utilitario> utilitarios = new ArrayList<>();
@@ -128,17 +125,25 @@ public class DNRPA {
         seccionales.get(3).agregarVehiculo(u1);
         Seccional S4 = seccionales.get(3);
 
-        String usuario = JOptionPane.showInputDialog("***Bienvenid@ al RNPA*** Introduce tu Nombre por favor");
-        String eleccionSeccional = JOptionPane.showInputDialog("*Bienvenido "+usuario+" * elige Seccional: S1 (CABA) - S2 (Cordoba) - S3 (Tucuman) - S4 (Corrientes)");
-        if(eleccionSeccional.equalsIgnoreCase("S1")){
-            System.out.println("Total Vehículos "+S1);
-        }else if(eleccionSeccional.equalsIgnoreCase("S2")) {
-            System.out.println("Total Vehículos " + S2);
-        }else if(eleccionSeccional.equalsIgnoreCase("S3")) {
-            System.out.println("Total Vehículos " + S3);
-        }else if(eleccionSeccional.equalsIgnoreCase("S4")) {
-            System.out.println("Total Vehículos " + S4);
+
+        // **** Pantalla Bienvenida y elección de seccional ****
+        String usuario = JOptionPane.showInputDialog("   ***   Bienvenid@ al RNPA   ***\n Introduce tu Nombre por favor: ");
+        String eleccionSeccional = JOptionPane.showInputDialog("*   Bienvenido "+usuario+" * \nConsulta por Seccional\n 1 = CABA \n 2 = Córdoba \n 3 = Tucumán \n 4 = Corrientes \n Escribe el NUMERO de Seccional:");
+        switch (eleccionSeccional){
+            case "1":
+                System.out.println("Total Vehículos "+S1);
+                break;
+            case "2":
+                System.out.println("Total Vehículos "+S2);
+                break;
+            case "3":
+                System.out.println("Total Vehículos "+S3);
+                break;
+            case "4":
+                System.out.println("Total Vehículos "+S4);
+                break;
         }
+
 
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
 
