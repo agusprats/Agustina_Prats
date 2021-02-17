@@ -194,17 +194,22 @@ public class DNRPA {
                 return o1.propietario.nombre.compareTo(o2.propietario.nombre);
             }
         });
-        System.out.println("Listado alfabético PROPIETARIOS CAMIONES: "+camiones);
+        camiones.forEach((camion)->{
+            System.out.println("Listado alfabético PROPIETARIOS CAMIONES: "+camion.getPropietario());
+        });
+        //System.out.println("Listado alfabético PROPIETARIOS CAMIONES: "+camiones);
 
         // 3) Registrar Fecha de alta: OK ===> localDate.of()
 
 
         // 4) Cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
         System.out.println("");
-        System.out.println("\"***  CAMBIO DE TITULARIDAD Y FECHA ***  \"");
+        System.out.println("***   CAMBIO DE TITULARIDAD Y FECHA   ***  ");
         System.out.println(ca5.nuevoPropietario());
 
         // 5) Registrar Fecha cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
+        System.out.println("");
+        System.out.println("***  FECHA DE CAMBIO DE TITULARIDAD  ***  ");
         System.out.println(ca5.fechaCambioTitular());
         System.out.println("DATOS COMPLETOS CAMION ca5: "+ca5);
 
@@ -218,25 +223,26 @@ public class DNRPA {
 
         //  <= <= <=   OTRAS CONSULTAS   => => =>
         System.out.println("");
+        System.out.println("***    OTRAS CONSULTAS   ***  ");
         System.out.println("Listar Todas las Seccionales: "+seccionales);
         //System.out.println("Vehiculos de Seccional S1: "+S1.vehiculos);
-        System.out.println("");
-        camiones.forEach((camion)->{
-            System.out.println("Camiones: "+camion.getPropietario()+" - Autorizados: "+camion.getAutorizados());
-        });
 
+
+        System.out.println("");
+        System.out.println("");
         System.out.println("Total de Autos Electricos: "+autosElectricos.size());
         System.out.println("Total de Camiones: "+camiones.size());
         System.out.println("Total de Colectivos: "+colectivos.size());
         System.out.println("Total de Autos: "+autos.size());
         System.out.println("Total de Motos: "+motos.size());
 
+        System.out.println("");
         for(int cont=0; cont < autos.size(); cont++){
             System.out.println("Ficha Tecnica Alta en Registro: "+autos.get(cont).fichaTecnica());
         }
-
+        System.out.println("");
         for(int cont=0; cont < colectivos.size(); cont++){
-            System.out.println("Propietarios de Camiones: "+colectivos.get(cont).getPropietario());
+            System.out.println("Propietarios de Colectivos: "+colectivos.get(cont).getPropietario());
         }
 
 
