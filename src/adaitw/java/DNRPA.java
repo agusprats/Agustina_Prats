@@ -133,20 +133,25 @@ public class DNRPA {
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
 
 
-        // **** Pantalla Bienvenida y elección de seccional ****
+        // **** Pantalla BIENVENIDA y CONSULTAS ****
         String usuario = JOptionPane.showInputDialog("   ***    Bienvenid@ a la D.N.R.P.A.   ***\n Introduce tu Nombre por favor: ");
-        String consultas = JOptionPane.showInputDialog("*       BIENVENIDO "+usuario+"      * \n Opciones de Consultas a DNRPA:\n 0 ==> Listar Total Autos\n 1 ==> Propietarios Camiones [A-Z] \n 2 ==> Total Seccionales y Vehículos  \n 3 ==> Seccional CABA \n 4 ==> Seccional Córdoba \n 5 ==> Seccional Tucumán \n 6 ==> Seccional Corrientes \n Escribe el NUMERO correspondiente:");
+        String consultas = JOptionPane.showInputDialog("*       BIENVENIDO "+usuario+"      * " +
+                "\n Opciones de Consultas a DNRPA:" +
+                "\n 0 ==> Listar Total Autos" +
+                "\n 1 ==> Propietarios Camiones [A-Z] " +
+                "\n 2 ==> Seccionales y Vehículos  " +
+                "\n 3 ==> Seccional CABA " +
+                "\n 4 ==> Seccional Córdoba " +
+                "\n 5 ==> Seccional Tucumán " +
+                "\n 6 ==> Seccional Corrientes " +
+                "\n Escribe el NUMERO correspondiente:");
+
         switch (consultas){
             case "0":
-                System.out.println("Listar Total AUTOS "+Seccional.mostrarAutos(autosElectricos, autos));
+                System.out.println("Listar Total AUTOS => "+Seccional.mostrarAutos(autosElectricos, autos));
                 break;
             case "1":
-                Collections.sort(camiones, new Comparator<Camion>() {
-                    @Override
-                    public int compare(Camion o1, Camion o2) {
-                        return o1.propietario.nombre.compareTo(o2.propietario.nombre);
-                    }
-                });
+                Collections.sort(camiones, Comparator.comparing(o -> o.propietario.nombre));
                 Iterator<Camion> camionIterator = camiones.iterator();
                 while(camionIterator.hasNext()) {
                     System.out.println(camionIterator.next());
@@ -172,14 +177,14 @@ public class DNRPA {
                 break;
         }
 
-        //Items del Integrador ===> ===> ===> ===>
+        //REQUERIMIENTOS INTEGRADOR ===> ===> ===> ===> ===>
         System.out.println("");
         System.out.println("");
-        System.out.println("-------------------------------------------------------------------------------- INTEGRADOR -----------------------------------------------------");
+        System.out.println(" <=== *** <=== *** <=== *** <=== *** <=== ***  INTEGRADOR  *** ===> *** ===> *** ===> *** ===> ");
         System.out.println("");
 
         // 1) Solicito la totalidad de autos a combustion o electricos:
-        System.out.println("***  LISTAR TOTALIDAD AUTOS (Eléctricos y Combustión) ***  ");
+        System.out.println(" ***  LISTAR TOTALIDAD AUTOS (Eléctricos y Combustión) ***  ");
         System.out.println("Listar Total Autos: "+Seccional.mostrarAutos(autosElectricos, autos));
         //System.out.println("Motor Combustión ==> "+autos+" Motor Eléctrico ==> "+autosElectricos);*/
         //Averiguar collections Iterable
@@ -187,7 +192,8 @@ public class DNRPA {
 
         // 2) Ordeno alfabéticamente propietarios camiones:
         System.out.println("");
-        System.out.println("***  LISTAR PROPIETARIOS DE CAMIONES ALFABÉTICAMENTE ***  ");
+        System.out.println(" ***  LISTAR PROPIETARIOS DE CAMIONES ALFABÉTICAMENTE ***  ");
+        //Segunda forma de ordenar
         Collections.sort(camiones, new Comparator<Camion>() {
             @Override
             public int compare(Camion o1, Camion o2) {
@@ -195,21 +201,20 @@ public class DNRPA {
             }
         });
         camiones.forEach((camion)->{
-            System.out.println("Listado alfabético PROPIETARIOS CAMIONES: "+camion.getPropietario());
+            System.out.println("Listado CAMIONES [A-Z]: "+camion.getPropietario());
         });
-        //System.out.println("Listado alfabético PROPIETARIOS CAMIONES: "+camiones);
 
         // 3) Registrar Fecha de alta: OK ===> localDate.of()
 
 
         // 4) Cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
         System.out.println("");
-        System.out.println("***   CAMBIO DE TITULARIDAD Y FECHA   ***  ");
+        System.out.println(" ***   CAMBIO DE TITULARIDAD Y FECHA   ***  ");
         System.out.println(ca5.nuevoPropietario());
 
         // 5) Registrar Fecha cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
         System.out.println("");
-        System.out.println("***  FECHA DE CAMBIO DE TITULARIDAD  ***  ");
+        System.out.println(" ***  FECHA DE CAMBIO DE TITULARIDAD  ***  ");
         System.out.println(ca5.fechaCambioTitular());
         System.out.println("DATOS COMPLETOS CAMION ca5: "+ca5);
 
@@ -223,7 +228,7 @@ public class DNRPA {
 
         //  <= <= <=   OTRAS CONSULTAS   => => =>
         System.out.println("");
-        System.out.println("***    OTRAS CONSULTAS   ***  ");
+        System.out.println(" ***    OTRAS CONSULTAS   ***  ");
         System.out.println("Listar Todas las Seccionales: "+seccionales);
         //System.out.println("Vehiculos de Seccional S1: "+S1.vehiculos);
 
