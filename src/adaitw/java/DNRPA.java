@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.util.*;
 import java.util.Iterator;
 import java.time.LocalDate;
-import java.util.PriorityQueue;
+
 
 
 public class DNRPA {
@@ -129,7 +129,7 @@ public class DNRPA {
         seccionales.get(3).agregarVehiculo(u1);
         Seccional S4 = seccionales.get(3);
 
-
+        //Turnos cargados
         Queue<String> turno = new LinkedList<>();
         turno.add("Diego");
         turno.add("Gabriel");
