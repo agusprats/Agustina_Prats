@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.util.*;
 import java.util.Iterator;
 import java.time.LocalDate;
+import java.util.PriorityQueue;
+
 
 public class DNRPA {
 
@@ -108,7 +110,7 @@ public class DNRPA {
 
         Moto m1 = new Moto(new Propietario("Gero", "CORRIENTES", "SAL332"),
                 false, LocalDate.of(2021, 01, 31));
-        //m1.cargarDominio();
+        m1.crear();
         motos.add(m1);
 
         Colectivo col1 = new Colectivo(new Propietario("TATA S.A", "CORRIENTES", "20-333222-1" ),
@@ -128,6 +130,16 @@ public class DNRPA {
         Seccional S4 = seccionales.get(3);
 
 
+        Queue<String> turno = new LinkedList<>();
+        turno.add("Diego");
+        turno.add("Gabriel");
+        turno.add("Mariana");
+        turno.add("Fernando");
+        turno.add("Hugo");
+        turno.add("Horacio");
+        turno.add("Sara");
+
+
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
 
 
@@ -138,10 +150,11 @@ public class DNRPA {
                 "\n 0 ==> Listar Total Autos" +
                 "\n 1 ==> Propietarios Camiones [A-Z] " +
                 "\n 2 ==> Seccionales y Vehículos  " +
-                "\n 3 ==> Seccional CABA " +
-                "\n 4 ==> Seccional Córdoba " +
-                "\n 5 ==> Seccional Tucumán " +
-                "\n 6 ==> Seccional Corrientes " +
+                "\n 3 ==> Solicitar Turno  " +
+                "\n 4 ==> Seccional CABA " +
+                "\n 5 ==> Seccional Córdoba " +
+                "\n 6 ==> Seccional Tucumán " +
+                "\n 7 ==> Seccional Corrientes " +
                 "\n Escribe el NUMERO correspondiente:");
 
         switch (consultas){
@@ -162,15 +175,23 @@ public class DNRPA {
                 }
                 break;
             case "3":
-                System.out.println("Total Vehículos "+S1);
+                turno.add(usuario);
+                System.out.println("Cantidad de personas en espera: "+ turno.size());
+                System.out.println("Primer turno a asignar: "+ turno.poll());
+                for(String persona: turno){
+                    System.out.println("Siguiente turno: "+persona);
+                }
                 break;
             case "4":
-                System.out.println("Total Vehículos "+S2);
+                System.out.println("Total Vehículos "+S1);
                 break;
             case "5":
-                System.out.println("Total Vehículos "+S3);
+                System.out.println("Total Vehículos "+S2);
                 break;
             case "6":
+                System.out.println("Total Vehículos "+S3);
+                break;
+            case "7":
                 System.out.println("Total Vehículos "+S4);
                 break;
         }
@@ -223,8 +244,6 @@ public class DNRPA {
         // 7) Consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular.
 
 
-
-
         //  <= <= <=   OTRAS CONSULTAS   => => =>
         System.out.println("");
         System.out.println(" ***    OTRAS CONSULTAS   ***  ");
@@ -250,7 +269,6 @@ public class DNRPA {
         }
 
 
-
         //(JOptionPane.showInputDialog("Ingrese: AUTO - MOTO - COLECTIVO - UTILITARIO - CAMION")),
 
         /*Forma Lambda 1
@@ -266,7 +284,6 @@ public class DNRPA {
         c.getPropietario();
         }*/
     }
-
 }
 
 

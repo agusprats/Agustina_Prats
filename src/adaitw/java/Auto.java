@@ -1,8 +1,6 @@
 package adaitw.java;
 
 import java.util.List;
-
-
 import java.time.LocalDate;
 
 public class Auto extends Vehiculo{

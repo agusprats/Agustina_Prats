@@ -87,15 +87,9 @@ public abstract class Vehiculo {
     }
 
     // DOMINIO
-    /*public void cargarDominio() {
-        int dominio = (int)(Math.random()*100);
-        System.out.println("Dominio nª: " + dominio);
-    }*/
-
     public int getDominio() {
         return dominio;
     }
-
 
     public int getCilindros() {
         return cilindros;

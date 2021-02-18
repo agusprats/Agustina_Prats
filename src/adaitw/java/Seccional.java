@@ -4,7 +4,7 @@ package adaitw.java;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Seccional{
+public class Seccional {
     protected String codigo;
     protected String provincia;
     protected List<Vehiculo> vehiculos;
