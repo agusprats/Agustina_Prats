@@ -1,11 +1,9 @@
 package adaitw.java;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-public abstract class Vehiculo<camiones> {
+public abstract class Vehiculo {
     protected Propietario propietario;
     private List<Autorizados> autorizados;
     protected int dominio;
@@ -106,7 +104,6 @@ public abstract class Vehiculo<camiones> {
     public void setCilindros(int cilindros) {
         this.cilindros = cilindros;
     }
-
 
     public String fichaTecnica() {
         return " " + propietario + " - Fecha Alta: " + fechaAlta + " - Fecha Cambio Titular: " + fechaCambioTitular();

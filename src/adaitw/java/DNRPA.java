@@ -1,12 +1,10 @@
 package adaitw.java;
 
 import jdk.swing.interop.SwingInterOpUtils;
-
 import javax.swing.*;
+import java.util.*;
 import java.util.Iterator;
 import java.time.LocalDate;
-import java.util.*;
-
 
 public class DNRPA {
 
@@ -193,6 +191,7 @@ public class DNRPA {
         // 2) Ordeno alfabéticamente propietarios camiones:
         System.out.println("");
         System.out.println(" ***  LISTAR PROPIETARIOS DE CAMIONES ALFABÉTICAMENTE ***  ");
+
         //Segunda forma de ordenar
         Collections.sort(camiones, new Comparator<Camion>() {
             @Override
@@ -262,6 +261,10 @@ public class DNRPA {
         Collections.sort(camiones, (o1, o2) -> o1.propietario.compareTo(o2.propietario));
         System.out.println("Listado propietarios camiones y nº dominio: "+camiones);*/
 
+         /*
+        for(Camion c: camiones){
+        c.getPropietario();
+        }*/
     }
 
 }
