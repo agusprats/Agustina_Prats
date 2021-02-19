@@ -176,11 +176,9 @@ public class DNRPA {
                 break;
             case "3":
                 turno.add(usuario);
-                System.out.println("Cantidad de personas en espera: "+ turno.size());
-                System.out.println("Primer turno a asignar: "+ turno.poll());
-                for(String persona: turno){
-                    System.out.println("Siguiente turno: "+persona);
-                }
+                System.out.println("Muchas gracias, "+usuario+" por favor, aguarde y será atendido");
+                System.out.println("Personas en espera: "+ turno.size());
+
                 break;
             case "4":
                 System.out.println("Total Vehículos "+S1);
@@ -246,10 +244,19 @@ public class DNRPA {
 
         //  <= <= <=   OTRAS CONSULTAS   => => =>
         System.out.println("");
+        System.out.println("");
         System.out.println(" ***    OTRAS CONSULTAS   ***  ");
+        //TURNOS REGISTRO
+        System.out.println("");
+        System.out.println("   *** TURNOS DRNPA *** ");
+        System.out.println("Personas en espera: "+ turno.size());
+        System.out.println("Primer turno: "+ turno.poll());
+        for(String persona: turno){
+            System.out.println("En espera: "+persona);
+        }
+        System.out.println("");
+        System.out.println("");
         System.out.println("Listar Todas las Seccionales: "+seccionales);
-        //System.out.println("Vehiculos de Seccional S1: "+S1.vehiculos);
-
 
         System.out.println("");
         System.out.println("");
