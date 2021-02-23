@@ -2,7 +2,7 @@ package adaitw.java;
 
 import java.time.LocalDate;
 
-public class Moto extends Vehiculo implements crearDominio{
+public class Moto extends Vehiculo{
     public Moto( Propietario propietario, Boolean categoriaProfesional, LocalDate fechaAlta) {
         super(propietario,categoriaProfesional, fechaAlta);
     }
@@ -12,7 +12,7 @@ public class Moto extends Vehiculo implements crearDominio{
         return "Moto{" +
                 "Propietario: " + propietario + '\'' +
                 ", Autorizados:'" + getAutorizados() + '\'' +
-                ", dominio='" + getDominio() + '\'' +
+                //", dominio='" + getDominios() + '\'' +
                 ", Categoria:" + getCategoriaProfesional() +
                 ", Fecha Alta:" + getFechaAlta() +
                 ", Fecha Cambio Titular: "+fechaCambioTitular()+
