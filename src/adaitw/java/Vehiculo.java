@@ -13,6 +13,7 @@ public abstract class Vehiculo {
     protected int cilindros;
     protected LocalDate start_date;
     protected LocalDate end_date;
+    protected Boolean antiguedad;
 
     public Vehiculo(Propietario propietario, Boolean categoriaProfesional, LocalDate fechaAlta) {
         this.propietario = propietario;
@@ -21,7 +22,6 @@ public abstract class Vehiculo {
         this.fechaAlta = fechaAlta;
         this.nuevaFecha = nuevaFecha;
         this.cilindros = cilindros;
-
     }
 
     // CONSTRUCTOR ALTERNATIVO ===> Carga por defecto de categoria y fecha de ingreso a Registro
@@ -104,20 +104,17 @@ public abstract class Vehiculo {
     public String antiguedad() {
         LocalDate start_date = (nuevaFecha==null) ? fechaAlta : nuevaFecha;
         LocalDate end_date = LocalDate.now();
-        Period diff = Period
-                .between(start_date,
-                        end_date);
+        Period diff = Period.between(start_date, end_date);
 
-        System.out.print("Tiempo transcurrido desde Alta o Cambio Titular: ");
-        System.out.printf("%d years, %d months" + " and %d days ",
-            diff.getYears(),
-            diff.getMonths(),
-            diff.getDays());
-        return "";
+        if(diff.getYears() == 1){
+            return "Transcurrió UN AÑO desde ALTA o NUEVA ALTA: \n"+diff.getYears()+" Año - "+diff.getMonths()+" Mes/es - "+diff.getDays()+" Dia/s ";
+        }else{
+            return "No tiene un año desde ALTA o NUEVA ALTA: \n"+diff.getYears()+" Año/s - "+diff.getMonths()+" Mes/es - "+diff.getDays()+" Dia/s ";
+        }
     }
 
     public String fichaTecnica() {
-        return " " + propietario + " - Fecha Alta: " + fechaAlta + " - Fecha Cambio Titular: " + fechaCambioTitular();
+        return " " + propietario + " - Fecha Alta: " + fechaAlta + " - Fecha Cambio Titular: " + fechaCambioTitular() +"\nTiempo desde registro: "+antiguedad();
     }
 
     //print propietarios details en main()
@@ -128,13 +125,24 @@ public abstract class Vehiculo {
 
 }
 
-/*System.out.printf("%d years, %d months" + " and %d days ",
-        diff.getYears());
-        diff.getMonths(),
-        diff.getDays());
-        return 0;*/
 
-/*
+
+
+
+
+
+
+
+
+
+
+
+/*System.out.print("Tiempo transcurrido desde Alta o Cambio Titular: ");
+        System.out.printf("%d years, %d months" + " and %d days ",
+            diff.getYears(),
+            diff.getMonths(),
+            diff.getDays());
+
     public void setDominios(Set<Integer> dominios) {
         for(int i=001; i<100; i++)
             dominios.add(i);
