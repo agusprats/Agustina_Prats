@@ -8,11 +8,11 @@ public abstract class Vehiculo {
     private List<Autorizados> autorizados;
     protected Set<Integer> dominio = new HashSet<>();
     protected Boolean categoriaProfesional;
-    private LocalDate fechaAlta;
+    protected LocalDate fechaAlta;
     protected LocalDate nuevaFecha;
     protected int cilindros;
-    protected String antiguedad;
-
+    protected LocalDate start_date;
+    protected LocalDate end_date;
 
     public Vehiculo(Propietario propietario, Boolean categoriaProfesional, LocalDate fechaAlta) {
         this.propietario = propietario;
@@ -101,29 +101,23 @@ public abstract class Vehiculo {
     }
 
     //Antiguedad desde fecha en registro
-    public void findDifference() {
+    public String antiguedad() {
         LocalDate start_date = (nuevaFecha==null) ? fechaAlta : nuevaFecha;
         LocalDate end_date = LocalDate.now();
+        Period diff = Period
+                .between(start_date,
+                        end_date);
 
-            Period diff = Period
-                    .between(start_date,
-                            end_date);
-
-            System.out.print("Difference " + "between two dates is: ");
-
-            // Print the result
-            System.out.printf(
-                    "%d years, %d months"
-                            + " and %d days ",
-                    diff.getYears(),
-                    diff.getMonths(),
-                    diff.getDays());
-        }
-
-
+        System.out.print("Tiempo transcurrido desde Alta o Cambio Titular: ");
+        System.out.printf("%d years, %d months" + " and %d days ",
+            diff.getYears(),
+            diff.getMonths(),
+            diff.getDays());
+        return "";
+    }
 
     public String fichaTecnica() {
-        return " " + propietario + " - Fecha Alta: " + fechaAlta + " - Fecha Cambio Titular: " + fechaCambioTitular()+"Antiguedad: ";
+        return " " + propietario + " - Fecha Alta: " + fechaAlta + " - Fecha Cambio Titular: " + fechaCambioTitular();
     }
 
     //print propietarios details en main()
@@ -133,6 +127,12 @@ public abstract class Vehiculo {
     }
 
 }
+
+/*System.out.printf("%d years, %d months" + " and %d days ",
+        diff.getYears());
+        diff.getMonths(),
+        diff.getDays());
+        return 0;*/
 
 /*
     public void setDominios(Set<Integer> dominios) {

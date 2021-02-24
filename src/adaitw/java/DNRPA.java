@@ -1,6 +1,7 @@
 package adaitw.java;
 
 import javax.swing.*;
+import java.time.Period;
 import java.util.*;
 import java.util.Iterator;
 import java.time.LocalDate;
@@ -85,7 +86,6 @@ public class DNRPA {
         ca5.agregarAutorizado(new Autorizados("Oscarcito", "TUC", "653"));
         ca5.cambiaPropietario(new Propietario("Lorenzo", "TUC", "123"));
         ca5.asignarAltaNuevoTitular(LocalDate.of(2021, 02, 05));
-        //ca5.findDifference();
         camiones.add(ca5);
 //
         Camion ca6 = new Camion(new Propietario("Amancio", "TUC", "764"),
@@ -139,7 +139,6 @@ public class DNRPA {
 
 
         // ---- /// ---- FIN DE LA CARGA DE DATOS ---- /// ---- ///
-
 
         // **** Pantalla BIENVENIDA y CONSULTAS ****
         String usuario = JOptionPane.showInputDialog("   ***    Bienvenid@ a la D.N.R.P.A.   ***\n Introduce tu Nombre por favor: ");
@@ -201,7 +200,6 @@ public class DNRPA {
         System.out.println(" ***  LISTAR TOTALIDAD AUTOS (Eléctricos y Combustión) ***  ");
         System.out.println("Listar Total Autos: " + Seccional.mostrarAutos(autosElectricos, autos));
         //System.out.println("Motor Combustión ==> "+autos+" Motor Eléctrico ==> "+autosElectricos);*/
-        //Averiguar collections Iterable
 
 
         // 2) Ordeno alfabéticamente propietarios camiones:
@@ -219,25 +217,30 @@ public class DNRPA {
             System.out.println("Listado CAMIONES [A-Z]: "+camion.getPropietario());
         });
 
-            // 3) Registrar Fecha de alta: OK ===> localDate.of()
+        // 3) Registrar Fecha de alta: OK ===> localDate.of()
 
 
-            // 4) Cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
+        // 4) Cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
             System.out.println("");
-            System.out.println(" ***   CAMBIO DE TITULARIDAD Y FECHA   ***  ");
+            System.out.println(" ***   CAMBIO DE TITULARIDAD  ***  ");
             System.out.println(ca5.nuevoPropietario());
 
-            // 5) Registrar Fecha cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
+        // 5) Registrar Fecha cambio de Propietario: OK ===>  Ver Camion ca5 como ejemplo
             System.out.println("");
             System.out.println(" ***  FECHA DE CAMBIO DE TITULARIDAD  ***  ");
             System.out.println(ca5.fechaCambioTitular());
             System.out.println("DATOS COMPLETOS CAMION ca5: " + ca5);
 
-            // 6) Asignar Patente Automáticamente:
-            //System.out.println(m1.getDominio());
+        // 6) Asignar Patente Automáticamente:
+        //System.out.println(m1.getDominio());
 
-            // 7) Consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular.
-
+        // 7) Consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular.
+        System.out.println("");
+        System.out.println(" ***  TIEMPO DESDE ALTA  ***  ");
+        System.out.println("Auto a1:");
+        System.out.println(a1.antiguedad());
+        System.out.println("Camion ca5:");
+        System.out.println(ca5.antiguedad());
 
             //  <= <= <=   OTRAS CONSULTAS   => => =>
             System.out.println("");
@@ -314,4 +317,5 @@ public class DNRPA {
         2) Registrar fecha de alta. *** Ok ***
         3) Pueden cambiar de propietario. *** Ok ***
         4) Se debe registrar la fecha de cambio de propietario. *** Ok ***
-        5) Se puede consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular.*/
+        5) Se puede consultar si pasó un año o mas desde el registro o cambio de titular para un auto en particular. *** Ok ***
+        */
