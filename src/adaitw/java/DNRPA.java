@@ -160,9 +160,9 @@ public class DNRPA {
                 break;
             case "1":
                 Collections.sort(camiones, Comparator.comparing(o -> o.propietario.nombre));
-                Iterator<Camion> camionIterator = camiones.iterator();
-                while (camionIterator.hasNext()) {
-                    System.out.println(camionIterator.next());
+                Iterator<Camion> it = camiones.iterator();
+                while (it.hasNext()) {
+                    System.out.println(it.next());
                 }
                 break;
             case "2":
@@ -205,8 +205,7 @@ public class DNRPA {
         // 2) Ordeno alfabéticamente propietarios camiones:
         System.out.println("");
         System.out.println(" ***  LISTAR PROPIETARIOS DE CAMIONES ALFABÉTICAMENTE ***  ");
-
-        //Segunda forma de ordenar
+        // ===> ===> ===> 2da forma de ordenar
         Collections.sort(camiones, new Comparator<Camion>() {
             @Override
             public int compare(Camion o1, Camion o2) {
@@ -288,7 +287,7 @@ public class DNRPA {
         Forma Lambda 2
         Collections.sort(camiones, (o1, o2) -> o1.propietario.compareTo(o2.propietario));
         System.out.println("Listado propietarios camiones y nº dominio: "+camiones);
-        for (Camion c : camiones) {
+        // For Each >>>>>   for (Camion c : camiones) {
             c.getPropietario();
 
         }*/
